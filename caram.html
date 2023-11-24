@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="stylecar.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@300&display=swap" rel="stylesheet">
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+      }
+      #modal {
+          display: none;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 20px;
+          background-color:  #670289fb;
+          border: 1px solid #ccc;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          z-index: 1000;
+          border-radius: 20px;
+      }
+      #overlay {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 999;
+      }
+      #modal:target,
+      #overlay:target {
+          display: block;
+      }
+  </style>
+  </head>
+  <body>
+    <header>
+        <div id="navigation" class="logo">
+          <img src="./imgs/carlogo.png" alt="" />
+        </div>
+        <nav class="links">
+          <a href="index.html">Головна</a>
+          <a href="cartravel.html">Забронювати авто</a>
+          <a href="about.html">Про нас</a>
+          <lable for="drop">
+            <label for="drop">
+              <select  id="drop" onchange="location=this.value;">
+                  <option>Автомобіль</option>
+                  <option value="caram.html">Б/у авто з Америки</option>
+                  <option value="careu.html">Б/у авто з Європи</option>
+                  <option value="carjap.html">Б/у авто з Японії</option>
+              </select>
+          </label>
+        </div>
+        </nav>
+        <div class="search-box">
+          <input type="text" placeholder="Search" />
+          <button type="submit">Go</button>
+        </div>
+        <div class="button1">
+          <a href="#modal">Зареєструватись</a>
+          <div id="modal">
+            <h2>Реєстрація</h2>
+            <form>
+              <div>
+                <label for="name">Name:</label>
+                <input id="name" type="text" placeholder="Name" />
+              </div>
+              <div>
+                <label for="last-name">Last-Name:</label>
+                <input id="last-name" type="text" placeholder="Last-Name" />
+              </div>
+              <div>
+                <label for="email">Email:</label>
+                <input id="email" type="text" placeholder="Email" />
+              </div>
+              <div>
+                <label for="password">Password:</label>
+                <input
+                  id="password"
+                  type="password"
+                  maxlength="12"
+                  minlength="6"
+                  placeholder="Password"
+                />
+              </div>
+              <div>
+                <label for="phone">Phone:</label>
+                <input id="phone" type="tel" placeholder="Phone" />
+              </div>
+              <button class="bup2">Зареєструватись</button>
+            </form>
+  
+            <a class="bup2" href="#" id="close">Закрити</a>
+            <a href="#overlay" id="overlay"></a>
+          </div>
+        </div>
+    </header>
+      <div class="text"><h2>Оберіть свій автомобіль мрії з нами!</h2></div>
+      <div class="div-cars">
+        <div class="cars">
+          <div class="cars_img">
+            <img src="./imgs/focus-rs.jpg" alt="">
+            <div class="car_text">
+              <h2>Кількість кс: 150</h2>
+              <h2>Рік випуску: 2018</h2>
+              <h2>Обємh: 3,0</h2>
+              <h2>Пробіг: 280 тис</h2>
+            </div>
+          </div>
+            <h1>Ford Focus </h1>
+            <p>Форд Фокус 2 - це компактний автомобіль, який випускається американською компанією Ford. Ця модель відзначається стильним дизайном, динамічною їздою і різноманітністю версій, включаючи седани, хетчбеки і універсали. Він оснащений різними двигунами, включаючи бензинові і дизельні варіанти, а також гібридну версію. Форд Фокус 2018 має широкий спектр технологічних функцій, включаючи системи безпеки, розваги та зручності, які роблять його конкурентоспроможним в сегменті компактних автомобілів.</p>
+            <p>2000$</p>
+            <div class="button">
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="login.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Купити зараз!</a>
+                </button>
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="cartravel.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Зарезервувати</a>
+                </button>
+            </div>
+        </div>
+        <div class="cars">
+          <div class="cars_img">
+            <img src="./imgs/dodge.jpg" alt="">
+            <div class="car_text">
+              <h2>Кількість кс: 400</h2>
+              <h2>Рік випуску: 1990</h2>
+              <h2>Обємh: 5,5</h2>
+              <h2>Пробіг: 960 тис</h2>
+            </div>
+          </div>
+            <h1>Dodge Challenger </h1>
+            <p>Dodge Challenger - це легендарне мускульне авто, яке відродилося в роки поновлення масового виробництва понад два десятиліття після попередньої моделі. Він був доступний в різних версіях, включаючи R/T і SRT8, і оснащувався потужними бензиновими двигунами, які надавали вражаючий крутний момент і швидкість. Challenger 1990 року зберігав класичний дизайн та агресивну зовнішність, що робило його популярним серед любителів американських мускульних автомобілів.</p>
+            <p>1000$</p>
+            <div class="button">
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="login.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Купити зараз!</a>
+                </button>
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="cartravel.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Зарезервувати</a>
+                </button>
+            </div>
+        </div>
+        <div class="cars">
+          <div class="cars_img">
+            <img src="./imgs/ram.png" alt="">
+            <div class="car_text">
+              <h2>Кількість кс: 620</h2>
+              <h2>Рік випуску: 2006</h2>
+              <h2>Обємh: 4.0</h2>
+              <h2>Пробіг: 563 тис</h2>
+            </div>
+          </div>
+            <h1>Dodge Ram </h1>
+            <p>Dodge Ram  - це популярний повнорозмірний пікап, вироблений американською компанією Dodge (пізніше перейменовано на Ram Trucks). В цей рік модель була доступна в різних конфігураціях, включаючи вантажівку і пасажирський варіант. Dodge Ram 2006 оснащувався різними двигунами, включаючи потужні HEMI V8, і мав вражаючу вантажопідйомність та здатність тягнути великі навантаження. Він також мав просторий кабін, комфортний інтер'єр і низку технологічних опцій, що робили його популярним вибором серед тих, хто потребував надійного робочого автомобіля або вантажівку для повсякденних потреб.  </p>
+            <p>15000$</p>
+            <div class="button">
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="login.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Купити зараз!  </a>
+                </button>
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="cartravel.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Зарезервувати</a>
+                </button>
+            </div>
+        </div>
+        <div class="cars">
+          <div class="cars_img">
+            <img src="./imgs/f150.png" alt="">
+            <div class="car_text">
+              <h2>Кількість кс: 700</h2>
+              <h2>Рік випуску: 2018</h2>
+              <h2>Обємh: 4.3</h2>
+              <h2>Пробіг: 945 тис</h2>
+            </div>
+          </div>
+            <h1>Ford F-150 </h1>
+            <p>Ford F-150  - це високопопулярний повнорозмірний пікап, який є частиною легендарної лінійки F-серії від Ford. Ця модель відзначається вражаючою потужністю, робочою здатністю та комфортом. В 2018 році F-150 був доступний у різних версіях і конфігураціях, включаючи бензинові і дизельні двигуни, а також варіанти з полноприводом. Важливою особливістю була використана алюмінієва кузовна конструкція, що сприяла зниженню ваги і покращенню пального споживання. F-150 також пропонував широкий спектр технологічних рішень, включаючи сучасні системи безпеки і розваг. Цей пікап завжди був популярним вибором серед покупців, які цінували силу і функціональність автомобіля.</p>
+            <p>42000$</p>
+            <div class="button">
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="login.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Купити зараз!</a>
+                </button>
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="cartravel.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Зарезервувати</a>
+                </button>
+            </div>
+        </div>
+        <div class="cars">
+          <div class="cars_img">
+            <img src="./imgs/cad-cts.png" alt="">
+            <div class="car_text">
+              <h2>Кількість кс: 460</h2>
+              <h2>Рік випуску: 2013</h2>
+              <h2>Обємh: 2.5</h2>
+              <h2>Пробіг: 280 тис</h2>
+            </div>
+          </div>
+            <h1>Cadillac CTS </h1>
+            <p>Cadillac CTS  - це представницький седан від американського виробника Cadillac, який відзначається розкошчю та високою якістю виконання. Модель CTS в 2013 році була доступна в різних конфігураціях, включаючи седан, купе і універсал, і відзначалася стильним і сучасним дизайном. Вибір двигунів також був широким, включаючи потужні V6 і V8, що забезпечували динамічну їзду. Салон автомобіля виглядав розкішно та включав в себе високоякісні матеріали і технологічні опції, такі як системи інфотейнменту і безпеки. Cadillac CTS 2013 був важливим моделлю для марки Cadillac, оскільки він сприяв підвищенню статусу і привабливості бренду в сегменті представницьких автомобілів.</p>
+            <p>13000$</p>
+            <div class="button">
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="login.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Купити зараз!</a>
+                </button>
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="cartravel.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Зарезервувати</a>
+                </button>
+            </div>
+        </div>
+        <div class="cars">
+          <div class="cars_img">
+            <img src="./imgs/camaro.png" alt="">
+            <div class="car_text">
+              <h2>Кількість кс: 320</h2>
+              <h2>Рік випуску: 2017</h2>
+              <h2>Обємh: 3.9</h2>
+              <h2>Пробіг: 250 тис</h2>
+            </div>
+          </div>
+            <h1>Chevrolet Camaro </h1>
+            <p>Chevrolet Camaro  - це іконічний спортивний автомобіль, який відзначається агресивним дизайном і високою потужністю. У 2017 році модель Camaro була доступна в різних версіях, включаючи купе і кабріолет, і пропонувала різні мотори, від більш доступних V6 до потужних V8, що забезпечували динамічну та швидку їзду. Camaro також відзначався відмінним кермуванням та хорошою стабільністю на дорозі.
+
+                Салон автомобіля був стильним і сучасним, а технологічні опції включали системи розваг і безпеки, що робили керування Camaro ще комфортнішим і безпечнішим. Chevrolet Camaro завжди був популярним серед ентузіастів швидких автомобілів і обожнювачів спортивної їзди, завдяки своєму яскравому характеру і відмінним характеристикам.</p>
+            <p>22000$</p>
+            <div class="button">
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="login.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Купити зараз!</a></button>
+                    <button class="bup">
+                      <a
+                        class="Pln_car"
+                        href="cartravel.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Зарезервувати</a>
+                    </button>
+            </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="logo">
+          <img class="logo-img" src="./imgs/carlogo.png" alt="" />
+        </div>
+        <ul class="footer-ul">
+          <li>Terms and Condidtions</li>
+          <li>Privacy Policy</li>
+          <li>Cookie Policy</li>
+        </ul>
+      </footer>
+  </body>
+</html>

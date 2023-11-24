@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="stylecar.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@300&display=swap" rel="stylesheet">
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+      }
+      #modal {
+          display: none;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 20px;
+          background-color:  #670289fb;
+          border: 1px solid #ccc;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          z-index: 1000;
+          border-radius: 20px;
+      }
+      #overlay {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 999;
+      }
+      #modal:target,
+      #overlay:target {
+          display: block;
+      }
+  </style>
+  </head>
+  <body>
+    <header>
+        <div id="navigation" class="logo">
+          <img src="./imgs/carlogo.png" alt="" />
+        </div>
+        <nav class="links">
+          <a href="index.html">Головна</a>
+          <a href="cartravel.html">Забронювати авто</a>
+          <a href="about.html">Про нас</a>
+          <lable for="drop">
+            <label for="drop">
+                <select  id="drop" onchange="location=this.value;">
+                    <option>Автомобіль</option>
+                    <option value="caram.html">Б/у авто з Америки</option>
+                    <option value="careu.html">Б/у авто з Європи</option>
+                    <option value="carjap.html">Б/у авто з Японії</option>
+                </select>
+            </label>
+        </div>
+        </nav>
+        <div class="search-box">
+          <input type="text" placeholder="Search" />
+          <button type="submit">Go</button>
+        </div>
+        <div class="button1">
+          <a href="#modal">Зареєструватись</a>
+          <div id="modal">
+            <h2>Реєстрація</h2>
+            <form>
+              <div>
+                <label for="name">Name:</label>
+                <input id="name" type="text" placeholder="Name" />
+              </div>
+              <div>
+                <label for="last-name">Last-Name:</label>
+                <input id="last-name" type="text" placeholder="Last-Name" />
+              </div>
+              <div>
+                <label for="email">Email:</label>
+                <input id="email" type="text" placeholder="Email" />
+              </div>
+              <div>
+                <label for="password">Password:</label>
+                <input
+                  id="password"
+                  type="password"
+                  maxlength="12"
+                  minlength="6"
+                  placeholder="Password"
+                />
+              </div>
+              <div>
+                <label for="phone">Phone:</label>
+                <input id="phone" type="tel" placeholder="Phone" />
+              </div>
+              <button class="bup2">Зареєструватись</button>
+            </form>
+  
+            <a class="bup2" href="#" id="close">Закрити</a>
+            <a href="#overlay" id="overlay"></a>
+          </div>
+        </div>
+    </header>
+      <div class="text"><h2>Оберіть свій автомобіль мрії з нами!</h2></div>
+      <div class="div-cars">
+        <div class="cars">
+          <div class="cars_img">
+            <img src="./imgs/rs6.png" alt="">
+            <div class="car_text">
+              <h2>Кількість кс: 820</h2>
+              <h2>Рік випуску: 2022</h2>
+              <h2>Обємh: 4.0</h2>
+              <h2>Пробіг: 50 тис</h2>
+            </div>
+          </div>
+            <h1>Audi RS6 Avant</h1>
+            <p>Audi RS6 Avant  - це вражаючий спортивний універсал від Audi, який поєднує в собі розкіш, продуктивність і практичність. Ця модель оснащена потужним 4.0-літровим V8-бензиновим двигуном з двома турбонаддувами, що генерує вражаючу потужність і динаміку руху. Завдяки системі quattro зі сталим повним приводом, RS6 може швидко розганятися і впевнено керувати на будь-яких дорожніх покриттях.
+
+                Ауді RS6 Avant 2022 має розкішний і сучасний салон, де використовуються високоякісні матеріали, і великий список технологічних опцій, включаючи сучасну систему інфотейнменту та безпеки. Цей автомобіль вражає не лише високими технічними характеристиками, але й практичністю завдяки об'ємному багажному відділенню. Audi RS6 2022 - це ідеальний вибір для тих, хто шукає розкішний та швидкий автомобіль, який також відмінно підходить для повсякденних потреб.</p>
+            <p>130 000$</p>
+            <div class="button">
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="login.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Купити зараз!</a>
+                </button>
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="cartravel.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Зарезервувати</a>
+                </button>
+            </div>
+        </div>
+        <div class="cars">
+          <div class="cars_img">
+            <img src="./imgs/octaha.png" alt="">
+            <div class="car_text">
+              <h2>Кількість кс: 320</h2>
+              <h2>Рік випуску: 2014</h2>
+              <h2>Обємh: 3.0</h2>
+              <h2>Пробіг: 630 тис</h2>
+            </div>
+          </div>
+            <h1>Skoda Octavia </h1>
+            <p>Skoda Octavia - це компактний сімейний автомобіль від чеського виробника Skoda. Ця модель відзначалася просторим і комфортним салоном, який надає достатньо місця для пасажирів і багажу. Octavia 2014 була доступна у різних версіях, включаючи седан і універсал, а також різні варіанти двигунів, від більш економічних до більш потужних.
+
+                Ця модель завжди була відома своєю надійністю та економічністю в експлуатації, що робить її популярним вибором для тих, хто шукає бюджетне та функціональне авто. У 2014 році Skoda Octavia отримала оновлену зовнішність та додаткові технологічні функції, що покращили комфорт та привабливість цього автомобіля.</p>
+            <p>13000$
+            </p>
+            <div class="button">
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="login.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Купити зараз!</a>
+                </button>
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="cartravel.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Зарезервувати</a>
+                </button>
+            </div>
+        </div>
+        <div class="cars">
+          <div class="cars_img">
+            <img src="./imgs/matiz.jpg" alt="">
+            <div class="car_text">
+              <h2>Кількість кс: 80</h2>
+              <h2>Рік випуску: 2003</h2>
+              <h2>Обємh: 1.5</h2>
+              <h2>Пробіг: 150 тис</h2>
+            </div>
+          </div>
+            <h1>Matiz</h1>
+            <p>Супер тачка щоб напитись і не жалко було розбити  всім рекомендую</p>
+            <p>500$</p>
+            <div class="button">
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="login.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Купити зараз!</a>
+                </button>
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="cartravel.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Зарезервувати</a>
+                </button>
+            </div>
+        </div>
+        <div class="cars">
+          <div class="cars_img">
+            <img src="./imgs/duster.png" alt="">
+            <div class="car_text">
+              <h2>Кількість кс: 300</h2>
+              <h2>Рік випуску: 2022</h2>
+              <h2>Обємh: 2.3</h2>
+              <h2>Пробіг: 654 тис</h2>
+            </div>
+          </div>
+            <h1>Renault Duster </h1>
+            <p>Renault Duster  - це компактний кросовер від французького виробника Renault. Модель Duster відзначається вражаючим виглядом, високою прохідністю і доступною ціною. У 2022 році Duster був оновлений для покращення зовнішнього вигляду та оновлених технологічних опцій.
+
+                Цей автомобіль є популярним вибором для тих, хто шукає кросовер зі сприятливим співвідношенням ціни і якості. Він доступний з різними моторами і пропонує ефективну експлуатацію. Renault Duster 2022 - це просторий автомобіль, який може задовольнити потреби різних власників, включаючи сім'ї та активних водіїв.</p>
+            <p>18000$</p>
+            <div class="button">
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="login.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Купити зараз!</a>
+                </button>
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="cartravel.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Зарезервувати</a>
+                </button>
+            </div>
+        </div>
+        <div class="cars">
+          <div class="cars_img">
+            <img src="./imgs/amg.png" alt="">
+            <div class="car_text">
+              <h2>Кількість кс: 630</h2>
+              <h2>Рік випуску: 2018</h2>
+              <h2>Обємh: 5.2</h2>
+              <h2>Пробіг: 120 тис</h2>
+            </div>
+          </div>
+            <h1>Mercedes-Benz AMG GT </h1>
+            <p>Mercedes-Benz AMG GT  - це вражаючий спортивний автомобіль, створений відомим відділом AMG компанії Mercedes-Benz. Ця модель відзначається елегантним дизайном і високою швидкістю. В 2018 році AMG GT був доступний в різних версіях, включаючи купе, родстери і суперседани, з різними рівнями потужності. Всі вони обладнані потужними бензиновими двигунами V8, які надають вражаючий крутний момент і динаміку руху.
+
+                Салон AMG GT був створений з використанням високоякісних матеріалів, що надає розкош і комфорт пасажирам. Цей автомобіль також обладнаний сучасними технологічними рішеннями для безпеки та розваги. Mercedes-Benz AMG GT 2018 - це автомобіль для тих, хто шукає спортивну розвагу і вишукану ексклюзивність в їхньому автомобілі.</p>
+            <p>115 000$</p>
+            <div class="button">
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="login.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Купити зараз!</a>
+                </button>
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="cartravel.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Зарезервувати</a>
+                </button>
+            </div>
+        </div>
+        <div class="cars">
+          <div class="cars_img">
+            <img src="./imgs/i8.png" alt="">
+            <div class="car_text">
+              <h2>Кількість кс: 540</h2>
+              <h2>Рік випуску: 2020</h2>
+              <h2>Обєм: Електро</h2>
+              <h2>Пробіг: 80 тис</h2>
+            </div>
+          </div>
+            <h1>BMW i8 </h1>
+            <p>BMW i8 - це спортивний гібридний автомобіль від німецького виробника BMW, вирізняється своїм сучасним дизайном і технологічними інноваціями. Модель поєднує у собі бензиновий двигун і електричний мотор, що надає йому вражаючу потужність та вражаючу вибірковість між споживанням пального і безпекою навколишнього середовища.
+
+                BMW i8 має купе-купол, що надає йому вигляд справжнього спортивного автомобіля, а також двері типу "чайка", які роблять його неймовірно привабливим. Салон автомобіля вражає комбінацією розкіші і майбутністю, використовуючи високоякісні матеріали і сучасні технології. BMW i8 - це автомобіль для тих, хто цінує спортивність і ефективність разом із здатністю до навколишнього середовища.</p>
+            <p>70000$</p>
+            <div class="button">
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="login.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Купити зараз!</a>
+                </button>
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="cartravel.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Зарезервувати</a>
+                </button>
+            </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="logo">
+          <img class="logo-img" src="./imgs/carlogo.png" alt="" />
+        </div>
+        <ul class="footer-ul">
+          <li>Terms and Condidtions</li>
+          <li>Privacy Policy</li>
+          <li>Cookie Policy</li>
+        </ul>
+      </footer>
+  </body>
+</html>

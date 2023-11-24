@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="stylecar.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@300&display=swap" rel="stylesheet">
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+      }
+      #modal {
+          display: none;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 20px;
+          background-color:  #670289fb;
+          border: 1px solid #ccc;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          z-index: 1000;
+          border-radius: 20px;
+      }
+      #overlay {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 999;
+      }
+      #modal:target,
+      #overlay:target {
+          display: block;
+      }
+  </style>
+  </head>
+  <body>
+    <header>
+        <div id="navigation" class="logo">
+          <img src="./imgs/carlogo.png" alt="" />
+        </div>
+        <nav class="links">
+          <a href="index.html">Головна</a>
+          <a href="cartravel.html">Забронювати авто</a>
+          <a href="about.html">Про нас</a>
+          <lable for="drop">
+            <label for="drop">
+              <select  id="drop" onchange="location=this.value;">
+                  <option>Автомобіль</option>
+                  <option value="caram.html">Б/у авто з Америки</option>
+                  <option value="careu.html">Б/у авто з Європи</option>
+                  <option value="carjap.html">Б/у авто з Японії</option>
+              </select>
+          </label>
+        </div>
+        </nav>
+        <div class="search-box">
+          <input type="text" placeholder="Search" />
+          <button type="submit">Go</button>
+        </div>
+        <div class="button1">
+          <a href="#modal">Зареєструватись</a>
+          <div id="modal">
+            <h2>Реєстрація</h2>
+            <form>
+              <div>
+                <label for="name">Name:</label>
+                <input id="name" type="text" placeholder="Name" />
+              </div>
+              <div>
+                <label for="last-name">Last-Name:</label>
+                <input id="last-name" type="text" placeholder="Last-Name" />
+              </div>
+              <div>
+                <label for="email">Email:</label>
+                <input id="email" type="text" placeholder="Email" />
+              </div>
+              <div>
+                <label for="password">Password:</label>
+                <input
+                  id="password"
+                  type="password"
+                  maxlength="12"
+                  minlength="6"
+                  placeholder="Password"
+                />
+              </div>
+              <div>
+                <label for="phone">Phone:</label>
+                <input id="phone" type="tel" placeholder="Phone" />
+              </div>
+              <button class="bup2">Зареєструватись</button>
+            </form>
+  
+            <a class="bup2" href="#" id="close">Закрити</a>
+            <a href="#overlay" id="overlay"></a>
+          </div>
+        </div>
+    </header>
+      <div class="text"><h2>Оберіть свій автомобіль мрії з нами!</h2></div>
+      <div class="div-cars">
+        <div class="cars">
+          <div class="cars_img">
+            <img src="./imgs/toyota.png" alt="">
+            <div class="car_text">
+              <h2>Кількість кс: 320</h2>
+              <h2>Рік випуску: 2018</h2>
+              <h2>Обємh: 3,6</h2>
+              <h2>Пробіг: 80 тис</h2>
+            </div>
+          </div>
+            <h1>Toyota Highlander</h1>
+            <p>Toyota Highlander 2018 - это среднеразмерный кроссовер, который пользуется популярностью благодаря своей надежности и комфорту. Этот автомобиль оснащен просторным салоном, многофункциональной системой инфотейнмента и доступен в нескольких версиях, включая гибридную. Он также обладает хорошей экономичностью и хорошей управляемостью, что делает его привлекательным выбором для семейных поездок и повседневного использования.</p>
+            <p>2000$</p>
+            <div class="button">
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="login.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Купити зараз!</a>
+                </button>
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="cartravel.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Зарезервувати</a>
+                </button>
+            </div>
+        </div>
+        <div class="cars">
+          <div class="cars_img">
+            <img src="./imgs/Honda.png" alt="">
+            <div class="car_text">
+              <h2>Кількість кс: 250</h2>
+              <h2>Рік випуску: 2008</h2>
+              <h2>Обємh: 2.0</h2>
+              <h2>Пробіг: 340 тис</h2>
+            </div>
+          </div>
+            <h1>Honda S2000 </h1>
+            <p>Honda S2000  - это спортивный родстер, который стал популярным среди автолюбителей благодаря своему мощному 2,2-литровому VTEC-двигателю, который выдает более 237 лошадиных сил. Этот автомобиль также известен своей отзывчивой и точной управляемостью, что делает его отличным выбором для тех, кто ищет динамичные вождение и азартные переживания за рулем спортивного автомобиля.</p>
+            <p>45000$</p>
+            <div class="button">
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="login.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Купити зараз!</a>
+                </button>
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="cartravel.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Зарезервувати</a>
+                </button>
+            </div>
+        </div>
+        <div class="cars">
+          <div class="cars_img">
+            <img src="./imgs/gtr.png" alt="">
+            <div class="car_text">
+              <h2>Кількість кс: 950</h2>
+              <h2>Рік випуску: 2009</h2>
+              <h2>Обємh: 3.5</h2>
+              <h2>Пробіг: 100 тис</h2>
+            </div>
+          </div>
+            <h1>Nissan GTR</h1>
+            <p>Nissan GT-R, также известный как Godzilla, это легендарный японский спорткар, который завоевал популярность благодаря своей мощности и выдающимся характеристикам производительности. Он оснащен мощным мотором V6 и системой полного привода, что позволяет ему разгоняться до высоких скоростей и легко управляться на трассе. GT-R также славится своим динамичным дизайном, который подчеркивает его спортивный характер, и это делает его одним из самых узнаваемых автомобилей в мире.</p>
+            <p>55300$</p>
+            <div class="button">
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="login.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Купити зараз!</a>
+                </button>
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="cartravel.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Зарезервувати</a>
+                </button>
+            </div>
+        </div>
+        <div class="cars">
+          <div class="cars_img">
+            <img src="./imgs/subaru.png" alt="">
+            <div class="car_text">
+              <h2>Кількість кс: 700</h2>
+              <h2>Рік випуску: 2010</h2>
+              <h2>Обємh: 4.0</h2>
+              <h2>Пробіг: 340 тис</h2>
+            </div>
+          </div>
+            <h1>Subaru Impreza WRX STI</h1>
+            <p>Subaru Impreza WRX STI - это выдающийся спортивный автомобиль, разработанный японским производителем Subaru. Он оснащен мощным двигателем и полным приводом, что делает его идеальным выбором для любителей быстрой и уверенной езды по дорогам любой сложности. Этот автомобиль также известен своей историей в мире ралли и соревнований, что придает ему статус культовой модели среди автолюбителей.</p>
+            <p>26000$</p>
+            <div class="button">
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="login.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Купити зараз!</a>
+                </button>
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="cartravel.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Зарезервувати</a>
+                </button>
+            </div>
+        </div>
+        <div class="cars">
+          <div class="cars_img">
+            <img src="./imgs/evo.png" alt="">
+            <div class="car_text">
+              <h2>Кількість кс: 290</h2>
+              <h2>Рік випуску: 2008</h2>
+              <h2>Обємh: 2.0</h2>
+              <h2>Пробіг: 165 тис</h2>
+            </div>
+          </div>
+            <h1>Mitsubishi Lancer Evolution</h1>
+            <p>Mitsubishi Lancer Evolution, часто известен как Evo, был иконичным автомобилем, разработанным для гоночных и раллийных соревнований. Его мощный турбированный двигатель, полный привод и спортивная настройка подвески делали его одним из наиболее уважаемых автомобилей среди любителей скорости и мотоспорта. Mitsubishi Lancer Evolution также был популярным среди энтузиастов за свой характерный дизайн и легендарные версии, такие как Evo VIII и Evo IX, которые оставили неизгладимый след в истории автомобильных гонок и культуре уличных гонок.</p>
+            <p>35000$</p>
+            <div class="button">
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="login.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Купити зараз!</a>
+                </button>
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="cartravel.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Зарезервувати</a>
+                </button>
+            </div>
+        </div>
+        <div class="cars">
+          <div class="cars_img">
+            <img src="./imgs/mazda.png" alt="">
+            <div class="car_text">
+              <h2>Кількість кс: 420</h2>
+              <h2>Рік випуску: 2016</h2>
+              <h2>Обємh: 2.0</h2>
+              <h2>Пробіг: 680 тис</h2>
+            </div>
+          </div>
+            <h1>Mazda MX-5</h1>
+            <p>Mazda MX-5, также известный как Mazda Miata в Северной Америке, это культовый спортивный автомобиль, который приобрел огромную популярность благодаря своей превосходной управляемости и непревзойденному вождению на открытой дороге. MX-5 представляет собой легкий и компактный родстер с открытым верхом, который олицетворяет концепцию "дорожного веселья" и остается одним из самых доступных спортивных автомобилей на рынке.</p>
+            <p>20000$</p>
+            <div class="button">
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="login.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Купити зараз!</a>
+                </button>
+                <button class="bup">
+                  <a
+                    class="Pln_car"
+                    href="cartravel.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Зарезервувати</a>
+                </button>
+            </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="logo">
+          <img class="logo-img" src="./imgs/carlogo.png" alt="" />
+        </div>
+        <ul class="footer-ul">
+          <li>Terms and Condidtions</li>
+          <li>Privacy Policy</li>
+          <li>Cookie Policy</li>
+        </ul>
+      </footer>
+  </body>
+</html>
